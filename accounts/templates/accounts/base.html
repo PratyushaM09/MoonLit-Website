@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Study Portal{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'core/images/favicon.ico' %}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+<!-- 🌐 NAVIGATION HANDLING -->
+{% if request.path == '/home/' and user.is_authenticated %}
+    <nav class="navbar-home">
+        <div class="nav-item nav-left">
+            <button class="transparent-button">👤 {{ user.email }}</button> 
+        </div>
+
+        <div class="nav-item nav-center">
+            <div class="moonlit-logo">
+                <span class="m-letter">M</span>
+                <img src="{% static 'core/images/moon_icon.png' %}" alt="Moon Icon" class="moon-icon">
+                <span class="onlit-text">onLit</span>
+            </div>
+        </div>
+
+        <div class="nav-item nav-right">
+           <a href="{% url 'settings' %}" class="transparent-button">⚙️ Settings</a>
+        </div>
+    </nav>
+
+{% elif request.path == '/signup/' or request.path == '/login/' or request.path == '/learn-more/' %}
+
+    <div class="top-logo-wrapper">
+        <div class="moonlit-logo">
+            <span class="m-letter">M</span>
+            <img src="{% static 'core/images/moon_icon.png' %}" alt="Moon Icon" class="moon-icon">
+            <span class="onlit-text">onLit</span>
+        </div>
+    </div>
+
+{% elif user.is_authenticated %}
+    <!-- ✅ Other Authenticated Pages: Normal navbar -->
+    <nav class="navbar-flex">
+        <a href="{% url 'landing' %}">Home</a>
+        <a href="{% url 'settings' %}">⚙️ Settings</a>
+        <span style="margin-left: 10px;">👤 {{ user.email }}</span>
+
+        <div class="moonlit-logo">
+            <span class="m-letter">M</span>
+            <img src="{% static 'core/images/moon_icon.png' %}" alt="Moon Icon" class="moon-icon">
+            <span class="onlit-text">onLit</span>
+        </div>
+    </nav>
+
+{% else %}
+    <!-- 🌍 Unauthenticated Pages -->
+    <nav class="navbar-flex">
+        <a href="{% url 'landing' %}">Home</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+
+        <div class="moonlit-logo">
+            <span class="m-letter">M</span>
+            <img src="{% static 'core/images/moon_icon.png' %}" alt="Moon Icon" class="moon-icon">
+            <span class="onlit-text">onLit</span>
+        </div>
+    </nav>
+{% endif %}
+
+<!-- 📦 MAIN CONTENT -->
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- ✅ Global Modal (Only ONE version) -->
+<div id="create-group-modal" class="modal hidden">
+  <div id="modal-content" class="modal-content"></div>
+</div>
+
+<!-- ✅ Load JavaScript only once -->
+<script src="{% static 'core/js/main.js' %}" defer></script>
+<script src="{% static 'mygroups/js/groups.js' %}" defer></script>
+
+</body>
+</html>

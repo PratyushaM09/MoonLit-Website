@@ -1,0 +1,39 @@
+<div class="panel groups-panel">
+    <!-- Left: List of groups -->
+    <div class="groups-left">
+        <h2 class="panel-title neon-blue">Groups</h2>
+
+        <!-- Button to create a new group -->
+        <button id="create-group-btn" class="task-add-btn">+ Create Group</button>
+
+        <!-- Groups list -->
+        <div id="group-list" class="group-list">
+            {% if groups %}
+                {% for group in groups %}
+                    <div class="group-btn" data-group-id="{{ group.id }}">
+                        {{ group.name }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="empty-text">You haven’t joined any groups yet.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Right: Group sections + content -->
+    <div class="groups-right">
+        <div id="group-sections" class="group-sections">
+            <!-- Group subsection buttons will load here dynamically -->
+        </div>
+        <div id="group-content" class="group-content">
+            <p>Select a group to see its sections</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for creating a group -->
+<div id="create-group-modal" class="modal hidden">
+    <div class="modal-content" id="modal-content">
+        <!-- Create group form will be loaded dynamically here -->
+    </div>
+</div>

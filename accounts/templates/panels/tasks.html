@@ -1,0 +1,41 @@
+<div class="panel tasks-panel">
+  <div class="task-left">
+    <h2 class="panel-title neon-green">Tasks</h2>
+    <div class="task-period active" data-category="Work">Work</div>
+    <div class="task-period" data-category="College">College</div>
+    <div class="task-period" data-category="Personal">Personal</div>
+
+    <button id="add-task-btn" class="add-goal-btn">+ Add Task</button>
+  </div>
+
+  <!-- Right side -->
+  <div class="task-right">
+    <div class="task-list" id="task-list">
+      <!-- dynamic tasks will go here -->
+    </div>
+  </div>
+</div>
+
+<!-- Task Modal -->
+<div id="task-modal" class="modal hidden">
+  <div class="modal-content">
+    <h3 id="task-modal-title">Add Task</h3>
+    
+    <label>Title:</label>
+    <input type="text" id="task-title" placeholder="Enter task title">
+    
+    <label>Progress (%):</label>
+    <input type="number" id="task-progress" min="0" max="100">
+    
+    <label>Subtasks (comma separated):</label>
+    <input type="text" id="task-subtasks" placeholder="e.g. Functions, Arrays">
+    
+    <div style="margin-top: 15px;">
+      <button id="save-task-btn" class="time-btn save-btn">Save</button>
+      <button id="cancel-task-btn" class="time-btn cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+

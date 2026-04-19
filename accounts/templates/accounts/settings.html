@@ -1,0 +1,42 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Settings{% endblock %}
+
+{% block content %}
+<body class="signup-body">
+<div class="form-container">
+    <div class="form-box">
+        <h2>User Settings</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <label for="id_username">Username:</label>
+            {{ form.username }}
+            
+            <label for="id_first_name">First Name:</label>
+            {{ form.first_name }}
+
+            <label for="id_email">Email:</label>
+            {{ form.email }}
+
+  <label for="profile_picture">Profile Picture:</label>
+  {% if request.user.profile_picture %}
+    <img src="{{ request.user.profile_picture.url }}" alt="Current Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+  {% endif %}
+  <input type="file" name="profile_picture" accept="image/*">
+
+  <button type="submit">Save Changes</button>
+</form>
+
+        <p><a href="{% url 'change_password' %}">🔐 Change Password</a></p>
+        <p><a href="{% url 'delete_account' %}" style="color: red;">❌ Delete Account</a></p>
+
+
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: green;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

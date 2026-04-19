@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoonLit Dashboard</title>
+  <link rel="stylesheet" href="{% static 'core/css/dashboard.css' %}">
+  <script defer src="{% static 'core/js/panelLoader.js' %}"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-icon" onclick="showPanel('groups')">👥</div>
+      <div class="sidebar-icon" onclick="showPanel('tasks')">✅</div>
+      <div class="sidebar-icon" onclick="showPanel('timer')">⏱️</div>
+      <div class="sidebar-icon" onclick="showPanel('goals')">🎯</div>
+    </div>
+ <div class="main-panel">
+    <!-- Top bar and welcome section (already working for you) -->
+    ...
+  </div>
+<div class="sidebar">
+    <h3>Your Groups</h3>
+    <ul id="group-list">
+        {% for group in groups %}
+         <a href="{% url 'mygroups:group_detail' group.id %}" class="group-item"></a>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="main-panel" id="group-panel">
+    <p>Select a group to view details.</p>
+</div>
+
+
+  </div>
+</body>
+</html>

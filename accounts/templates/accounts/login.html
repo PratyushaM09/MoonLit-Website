@@ -1,0 +1,39 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block body_class %}landing-body{% endblock %}
+
+{% block content %}
+<div class="centered-form-wrapper">
+    <div class="glass-form-box">
+        <h2>Log In</h2>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error-message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-field">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <p class="form-error">{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <button type="submit" class="btn-small-done">Done</button>
+
+            <p class="login-redirect">
+                Don’t have an account? <a href="{% url 'signup' %}">Sign up</a>
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

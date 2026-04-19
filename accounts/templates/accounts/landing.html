@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoonLit</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+
+</head>
+<body class="landing-body">
+
+    <!-- Top-right Learn More -->
+        <a href="{% url 'learn_more' %}" class="learn-more-btn">Learn more →</a>
+
+
+    <!-- Centered Title + Tagline + Join Button -->
+    <div class="center-content">
+  <div class="moonlit-logo">
+    <span class="m-letter">M</span>
+    <img src="{% static 'core/images/moon_icon.png' %}" alt="Moon Icon" class="moon-icon">
+    <span class="onlit-text">onLit</span>
+  </div>
+
+  <p class="moonlit-tagline">
+    A cozy online space where you can study with your buddies — anytime, anywhere.<br>
+    No matter your college, stream, or schedule, Moonlit brings everyone together in one place.
+  </p>
+
+  <a href="{% url 'signup' %}" class="join-now-btn">Join Now</a>
+</div>
+
+
+</body>
+</html>

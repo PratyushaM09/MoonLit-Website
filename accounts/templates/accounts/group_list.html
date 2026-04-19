@@ -1,0 +1,28 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Available Groups</h2>
+    <ul>
+        {% for group in groups %}
+            <li>
+                {{ group.name }}
+                {% if group in user_groups %}
+                    <a href="{% url 'leave_group' group.id %}">Leave</a>
+                {% else %}
+                    <a href="{% url 'join_group' group.id %}">Join</a>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No groups available.</li>
+        {% endfor %}
+    </ul>
+ <button id="create-group-btn">+ Create your Group</button>
+
+<div id="create-group-modal" class="modal hidden">
+  <div id="modal-content"></div>
+</div>
+
+
+</div>
+{% endblock %}

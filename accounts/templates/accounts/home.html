@@ -1,0 +1,52 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+{% block body_class %}home-body{% endblock %}
+
+{% block content %}
+
+<!-- 💠 Welcome Panel -->
+<div class="welcome-panel">
+  <h1>Welcome {{ user.first_name|default:user.username }}, it's our space to Grow together</h1>
+  <p>Study Made Simple — Timers, Chats, Groups</p>
+</div>
+
+<!-- 💠 Discord-style Dashboard Layout -->
+<!-- This wrapper keeps sidebar out of flex flow -->
+<div class="sidebar-wrapper">
+
+  <!-- Left Sidebar -->
+  <div class="glass-sidebar">
+    <div class="sidebar-icons">
+      <a href="#" class="sidebar-icon-link" data-panel="groups">
+        <img src="{% static 'core/icons/groups.svg' %}" class="sidebar-icon" title="Groups" />
+      </a>
+      <a href="#" class="sidebar-icon-link" data-panel="tasks">
+        <img src="{% static 'core/icons/tasks.svg' %}" class="sidebar-icon" title="Tasks" />
+      </a>
+      <a href="#" class="sidebar-icon-link" data-panel="timer">
+        <img src="{% static 'core/icons/timer.svg' %}" class="sidebar-icon" title="Timer" />
+      </a>
+      <a href="#" class="sidebar-icon-link" data-panel="goals">
+        <img src="{% static 'core/icons/goals.svg' %}" class="sidebar-icon" title="Goals" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Dynamic Group Sidebar -->
+  <div id="group-sidebar" class="sidebar hidden"></div>
+
+  <!-- Right Main Panel -->
+  <div class="main-content">
+    <div id="main-panel" class="main-panel fade-in">
+      <!-- Dynamic content loads here -->
+    </div>
+  </div>
+
+</div>
+
+<script src="{% static 'mygroups/js/groups.js' %}" defer></script>
+
+<script src="{% static 'core/js/main.js' %}"defer></script>
+
+{% endblock %}

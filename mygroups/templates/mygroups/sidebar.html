@@ -1,0 +1,21 @@
+<!-- mygroups/templates/mygroups/sidebar.html -->
+<div id="group-sidebar" class="group-sidebar">
+  <h3>Groups</h3>
+  <ul id="group-list">
+    {% for group in groups %}
+      <li class="group-item" data-group-id="{{ group.id }}">
+        {{ group.name }}
+      </li>
+    {% endfor %}
+  </ul>
+  <button id="create-group-btn" class="btn">+ Create Group</button>
+</div>
+
+<!-- Sidebar for features of the selected group -->
+<div id="feature-sidebar" class="feature-sidebar">
+  <h4>Features</h4>
+  <ul id="feature-list">
+    <!-- Loaded dynamically via JS -->
+  </ul>
+  <button id="add-feature-btn" class="btn">+ Add Feature</button>
+</div>

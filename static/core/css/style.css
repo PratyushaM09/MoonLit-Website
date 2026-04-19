@@ -1,0 +1,1941 @@
+/* ========= BASE RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========= GENERAL BODY ========== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+/* ========= LANDING / LOGIN / SIGNUP ========== */
+body.landing-body,
+body.login-body,
+body.signup-body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('/static/core/images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+
+/* Sign Up Page Glassmorphism Form */
+/* Wrapper for the whole login/signup page below logo */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px); /* Adjust for logo height */
+  padding: 0 1rem;
+}
+.centered-form-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 80px; /* space from top for logo */
+}
+
+.glass-form-box {
+  background: rgba(0, 0, 0, 0.6); /* Transparent black glass */
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  max-width: 450px;
+  width: 90%;
+  color: white;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: Arial, sans-serif;
+}
+
+.glass-form-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.glass-form-box label {
+  color: #aad3ff;
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+}
+
+.glass-form-box input {
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 5px;
+  border-radius: 30px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+}
+
+.glass-form-box input::placeholder {
+  color: #ccc;
+}
+
+/* RESET any global button interference */
+button.btn-small-done,
+.glass-form-box button.btn-small-done {
+  all: unset; /* 💥 Removes all default/previous styles */
+  background: transparent;
+  border: 2px solid;
+  border-image: linear-gradient(90deg, #ff007f, #00d9ff);
+  border-image-slice: 1;
+  color: #a9d1f8;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px auto 15px auto;
+  transition: all 0.3s ease;
+  width: max-content;
+  max-width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+button.btn-small-done:hover {
+  background: linear-gradient(90deg, #ff007f, #00d9ff);
+  color: white;
+  border: 2px solid transparent;
+}
+
+
+.login-redirect {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.login-redirect a {
+  color: #66aaff;
+  text-decoration: none;
+}
+
+.login-redirect a:hover {
+  text-decoration: underline;
+}
+
+.form-error {
+  color: #ff8888;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+}
+
+/* ========= DASHBOARD / HOME PAGE ========== */
+body.home-body {
+  background-color: #0f0f1e !important;
+  color: white !important;
+}
+
+/* ========== NAVIGATION ========== */
+.header {
+  background-color: #0c0c22;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.navbar a:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  height: 90vh;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+}
+
+/* ========== CALL TO ACTION ========== */
+.cta-button {
+  padding: 12px 24px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* ========== FORM STYLES ========== */
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+}
+
+.form-box {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  color: #000;
+  text-align: center;
+}
+
+.form-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.form-box label {
+  display: block;
+  margin-top: 10px;
+  color: #000;
+  text-align: left;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.form-box button:hover {
+  background-color: #45a049;
+}
+
+input::placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+/* ========== HOMEPAGE STYLES ========== */
+
+
+.homepage-wrapper,
+.homepage-container {
+  padding: 2rem;
+  color: #000;
+}
+
+.welcome-header {
+  background: linear-gradient(to right, #89f7fe, #66a6ff);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 1rem 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+/* ========== DASHBOARD & SIDEBAR ========== */
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+/*.sidebar {
+  width: 200px;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+}*/
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 0.5rem 0;
+}
+
+.sidebar button {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: bold;
+}
+
+/* Grid for Cards */
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Cards */
+.pomodoro, .goals {
+  background-color: #1f1f2e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 250px;
+  height: 200px;
+}
+
+.card h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* Timer Buttons (Fix) */
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.timer-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.timer-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* ========== CHAT ========== */
+.chat-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  background: #fff;
+  border-left: 1px solid #ccc;
+  padding: 1rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-panel.hidden {
+  display: none;
+}
+
+.chat-box {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  overflow-y: auto;
+  background: #f9f9f9;
+  margin-bottom: 0.5rem;
+}
+
+#chat-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#chat-form input[type="text"] {
+  flex-grow: 1;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #000;
+}
+
+#chat-form input::placeholder {
+  color: #888;
+}
+
+#chat-form button {
+  background-color: royalblue;
+  color: white;
+  border: none;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#chat-form button:hover {
+  background-color: #0056b3;
+}
+
+/* ========== UTILITIES ========== */
+.hidden {
+  display: none !important;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.form-box input[type="text"],
+.form-box input[type="email"],
+.form-box input[type="password"],
+.form-box input {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-box input::placeholder {
+  color: #666 !important;
+}
+
+.form-box label {
+  color: #000 !important;
+}
+
+img {
+  display: block;
+  margin: 1rem auto;
+  border-radius: 50%;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/*.pomodoro, .goals {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 250px;
+  height: 200px;
+}
+*/
+.card {
+  display: block; /* ❌ this would break the grid */
+}
+
+/* Learn More button top-right */
+.learn-more-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: #ffffff; /* solid white */
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more-btn:hover {
+  background-color: #f2f2f2; /* slightly off-white on hover */
+  color: #000;
+}
+
+/* Centered Landing Content */
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 800px;
+  width: 90%;
+  padding: 0 1rem;
+}
+
+.moonlit-logo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1px;
+  flex-wrap: nowrap;
+  margin-bottom: 20px;
+}
+
+.m-letter {
+  font-family: 'Jacques Francois Shadow', serif;
+  font-size: 100px;
+  color: white;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.moon-icon {
+  width: 95px;
+  height: 95px;
+  margin: 0 -8px;
+  top: 20px;
+ 
+}
+
+.onlit-text {
+  font-family: 'Jacques Francois Shadow', serif;
+  font-size: 90px;
+  color: white;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+
+.moonlit-tagline {
+  font-family: Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin: 1rem 0 2rem;
+  line-height: 1.6;
+  color:white;
+}
+
+/* Join Now button */
+.join-now-btn {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.join-now-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.login-redirect {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-redirect a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-redirect a:hover {
+  text-decoration: underline;
+}
+
+/*.navbar-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}*/
+/*.navbar-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: white;
+  align-items: center;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.user-info {
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+  margin-right: auto;
+}*/
+
+.settings-link {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.settings-link:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* === Global Dark Mode === */
+/* Top Header & Nav */
+.header, .navbar {
+  background-color: #0c0c22 !important;
+  color: white !important;
+}
+.header a, .header span, .navbar a {
+  color: white !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 5px;
+  text-decoration: underline !important;
+}
+
+/* Sidebar */
+
+/* Pomodoro, Goals, Cards */
+.pomodoro, .goals, .card {
+  background-color: #1d1d2f !important;
+  color: white !important;
+  border: none !important;
+}
+.pomodoro *, .goals *, .card * {
+  color: white !important;
+}
+
+/* Chat Panels */
+.chat-panel {
+  background-color: #1b1b2b !important;
+  color: white !important;
+}
+.chat-panel *, .chat-panel input, .chat-panel textarea {
+  color: white !important;
+  background-color: #2a2a3d !important;
+}
+.chat-panel input::placeholder,
+.chat-panel textarea::placeholder {
+  color: #bbb !important;
+}
+
+/* Form Boxes */
+.form-box {
+  background-color: #fff !important;
+  color: black !important;
+}
+.form-box *, .form-box input, .form-box label {
+  color: black !important;
+}
+.form-box input {
+  background-color: #fff !important;
+}
+
+/* Avatar / User Info / Settings */
+.header .user-info,
+.header .settings-link {
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Welcome Message */
+.hero,
+.hero * {
+  color: white !important;
+}
+
+/* Fix dim/disabled elements */
+*:not(:disabled) {
+  opacity: 1 !important;
+}
+
+.learn-more-container {
+  padding: 2rem;
+  color: white;
+  background-color: #121212;
+}
+
+.learn-more-container h1, h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+details {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.scrollable-policy {
+  margin-top: 2rem;
+}
+
+.policy-box {
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.03);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.navbar-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  color: white;
+}
+
+.nav-section {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.nav-left {
+  text-align: left;
+}
+
+.nav-right {
+  text-align: right;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  padding-top: 10px;  /* or adjust as needed */
+}
+
+/* Ensure nav bar alignment */
+.navbar-balanced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  /* Align items vertically */
+  padding: 1rem 2rem;
+  background: transparent;
+  color: white;
+}
+
+.nav-left,
+.nav-right {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;  /* Ensure text aligns vertically */
+}
+
+.moonlit-logo-inline {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.moonlit-logo-inline .m-letter {
+  font-family: 'Jacques Francois Shadow', serif;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.moonlit-logo-inline .moon-icon-inline {
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  position: relative;
+  top: 3px;
+}
+
+.moonlit-logo-inline .onlit-text {
+  font-family: 'Jacques Francois Shadow', serif;
+  font-size: 1.4rem;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nav-white-btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-white-btn:hover {
+  background-color: #eee;
+  color: #222;
+}
+
+/* Applies homebg.jpg to all pages except landing, login, signup */
+body:not(.landing-body):not(.login-body):not(.signup-body) {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('/static/core/images/homebg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.top-panel {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.email-box,
+.settings-box a {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.settings-box a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logo-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.m-letter {
+  font-family: Georgia, serif;
+  color: white;
+}
+
+.moon-icon-inline {
+  height: 35px;
+  margin: 0 5px;
+}
+
+.onlit-text {
+  font-family: Georgia, serif;
+  color: white;
+}
+
+.welcome-box {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.welcome-box h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-box p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.welcome-panel {
+  max-width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.07); /* Light transparent */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.welcome-panel h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.welcome-panel p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Layout container */
+.dashboard-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.glass-sidebar {
+    position: absolute;
+    top: 350px; /* Below the navbar */
+    left: 25px;
+    width: 65px;
+    height: calc(100vh - 400px); /* Leaves space below */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 15px 0;
+    gap: 15px;
+    z-index: 10;
+}
+
+
+/* Adjust main content to avoid overlap */
+.main-content {
+    margin-left: 100px; /* Sidebar width + spacing */
+    padding: 20px;
+    overflow-y: auto;
+}
+.sidebar-icon {
+    width: 40px;
+    height: 40px;
+    margin: 20px 0;
+    filter: invert(1);
+    opacity: 0.9;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-icon:hover {
+    transform: scale(1.2);
+}
+
+.transparent-button {
+  background-color: transparent;
+  border: 1.5px solid white;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 50px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.transparent-button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* soft glow */
+  color: white;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.panel { 
+    padding: 20px; 
+    border-radius: 15px;
+    background-color: #1a1a1a;
+    color: white;
+    margin: 20px;
+}
+
+/* Unique color borders */
+
+
+/* Header */
+.panel-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Add styling to group buttons, chat, goals, etc. as needed */
+
+.groups-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.group-list,
+.group-sections {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.group-content {
+    flex: 3;
+    border-left: 1px solid #333;
+    padding-left: 20px;
+    min-height: 300px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    min-height: 200px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Container for both panels */
+.panel-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Each panel */
+.panel {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    min-width: 300px;
+    max-width: 500px;
+    flex: 1 1 45%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Panel heading */
+.panel h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #fff;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding-bottom: 5px;
+}
+
+/* Panel-specific underline colors */
+.groups-panel h2 { border-bottom-color: #ffff33; }  /* yellow */
+.tasks-panel h2 { border-bottom-color: #00ff66; }  /* green */
+.goals-panel h2 { border-bottom-color: #00ccff; }  /* blue */
+.timer-panel h2 { border-bottom-color: #ff33cc; }  /* pink */
+
+
+/* Panel list */
+.panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.panel ul li {
+    padding: 6px 10px;
+    margin: 5px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    color: #ddd;
+    transition: background 0.2s ease;
+}
+
+.panel ul li:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Main Panel Container ===== */
+.panel.tasks-panel,
+.panel.goals-panel {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* how wide you want the whole panel */
+    margin: 0 auto; /* center it */
+    align-items: flex-start; /* align top */
+}
+
+.task-left, 
+.goal-left {
+    flex: 0 0 220px; /* fixed width for left side */
+}
+
+.task-right, 
+.goal-right {
+    flex: 1; /* take remaining space */
+    min-width: 0; /* prevent overflow */
+}
+
+.goal-card {
+    flex: 1 1 230px;
+    max-width: 300px;
+    background: #111;
+    border: 2px solid #00ccff; 
+    border-radius: 15px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/* Left section buttons */
+.task-period {
+    display: block;
+    padding: 10px 20px; /* extra horizontal padding */
+    border: 2px solid lime;
+    border-radius: 50px; /* fully rounded ends */
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 12px;
+}
+
+
+.task-period:last-child {
+    margin-bottom: 0;      /* remove space after the last one */
+}
+
+.task-period:hover {
+    background: lime;
+    color: black;
+}
+
+.task-period.active {
+    background: lime;
+    color: black;
+}
+
+/* Override for Goals panel vertical buttons */
+.goals-panel .task-period {
+    border-color: #00ccff; /* blue border */
+}
+
+.goals-panel .task-period:hover,
+.goals-panel .task-period.active {
+    background: #00ccff; /* blue background */
+    color: black;
+}
+
+
+.task-add-btn {
+    margin-top: auto;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 8px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.task-add-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* ===== Right Section ===== */
+.task-right {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00ff66; /* green for tasks */
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.goal-right {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00ccff; 
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+/* Category Tabs */
+.task-categories, .goal-categories {
+    display: flex;
+    flex-wrap: wrap;           /* allows wrapping to new lines */
+    gap: 15px;                 /* space between buttons */
+    margin-bottom: 20px;       /* space under the button row */
+    justify-content: flex-start;
+}
+
+/* Remove generic hover color */
+.category-btn {
+    border-radius: 50px;      /* pill shape */
+    padding: 10px 22px;       /* spacing inside */
+    border: 2px solid white;  /* default border */
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;              /* space between buttons */
+}
+
+
+/* Panel-specific hover + active */
+.groups-panel .category-btn.active,
+.groups-panel .category-btn:hover {
+    background: #ffff33; /* yellow */
+    border-color: #ffff33;
+    box-shadow: 0 0 8px #ffff33;
+    color: black;
+}
+
+.tasks-panel .category-btn.active,
+.tasks-panel .category-btn:hover {
+    background: #00ff66; /* green */
+    border-color: #00ff66;
+    box-shadow: 0 0 8px #00ff66;
+    color: black;
+}
+
+.goals-panel .category-btn.active,
+.goals-panel .category-btn:hover {
+    background: #00ccff; /* blue */
+    border-color: #00ccff;
+    box-shadow: 0 0 8px #00ccff;
+    color: black;
+}
+
+.timer-panel .category-btn.active,
+.timer-panel .category-btn:hover {
+    background: #ff33cc; /* pink */
+    border-color: #ff33cc;
+    box-shadow: 0 0 8px #ff33cc;
+    color: black;
+}
+
+
+
+/* ===== Scrollable Card List ===== */
+.task-list,
+.goal-list {
+    flex: 1; /* take up remaining space */
+    overflow-y: auto; /* scroll if needed */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* ===== Cards ===== */
+/* ===== Cards ===== */
+.task-card {
+    flex: 1 1 230px;
+    max-width: 300px;
+    background: #111;
+    border: 2px solid #00ff66; /* green for tasks */
+    border-radius: 15px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.goal-card {
+    flex: 1 1 230px;
+    max-width: 300px;
+    background: #111;
+    border: 2px solid #00ccff; /* yellow for goals */
+    border-radius: 15px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.goal-card ul li {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.tasks-panel .category-btn.active,
+.tasks-panel .category-btn:hover {
+    background: #00ff66;
+    border-color: #00ff66;
+    box-shadow: 0 0 8px #00ff66;
+    color: black; /* add this */
+}
+
+.goals-panel .category-btn.active,
+.goals-panel .category-btn:hover {
+    background: #00ccff;
+    border-color: #00ccff;
+    box-shadow: 0 0 8px #00ccff;
+    color: black; /* add this */
+}
+
+
+/* Neon Hover per panel */
+.tasks-panel .task-card:hover {
+    box-shadow: 0 0 10px #00ff66; /* neon green */
+}
+
+.goals-panel .goal-card:hover {
+    box-shadow: 0 0 10px #00ccff; /* neon yellow */
+}
+
+
+/* TASKS — Border Glow Hover */
+.tasks-panel .task-card {
+    border-color: #00ff66;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.tasks-panel .task-card:hover {
+    border-color: #00ff66;
+    box-shadow: 0 0 10px #00ff66;
+    background: transparent;
+    color: white;
+}
+
+/* GOALS — Border Glow Hover */
+.goals-panel .goal-card {
+    border-color: #00ccff;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.goals-panel .goal-card:hover {
+    border-color: #00ccff;
+    box-shadow: 0 0 10px #00ccff;
+    background: transparent;
+    color: white;
+}
+
+.modal input, .modal textarea {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #00ccff;
+    border-radius: 5px;
+}
+
+.modal h3 {
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#add-goal-modal input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#add-goal-modal button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#save-goal-btn {
+    background: #00ccff;
+    color: black;
+    border: none;
+}
+
+#cancel-goal-btn {
+    background: #ccc;
+    color: black;
+    border: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+.modal-content {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+}
+/* Goals Panel Category Buttons */
+.goals-panel .goal-period {
+    display: block;
+    padding: 10px 20px;
+    border: 2px solid #00ccff;
+    border-radius: 50px; /* pill shape */
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+    background: transparent;
+    color: white;
+}
+
+.goals-panel .goal-period.active,
+.goals-panel .goal-period:hover {
+    background: #00ccff; /* blue fill */
+    border-color: #00ccff;
+    box-shadow: 0 0 8px #00ccff;
+    color: black;
+}
+
+/* Main groups panel container */
+.panel.groups-panel {
+  display: flex;
+  height: 100%;
+}
+
+/* Left column (groups list) */
+.groups-left {
+  width: 280px;
+  background: #1a1a1a;
+  padding: 15px;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.groups-left h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Group buttons - pill shaped */
+.group-btn {
+  background: transparent;
+  padding: 10px 18px;
+  border-radius: 50px; /* pill shape */
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s, color 0.3s;
+  margin-bottom: 5px;
+  text-align: left;
+  border: 1px solid yellow;
+  font-size: 16px;
+}
+
+.group-btn:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+.group-btn.active {
+  background: #ffd700;
+  color: #000;
+}
+
+/* Create Group button - pill shaped */
+.create-group-btn {
+  background: transparent;
+  padding: 10px 18px;
+  border-radius: 50px; /* pill shape */
+  cursor: pointer;
+  color: #ffd700;
+  border: 1px solid #ffd700;
+  transition: background 0.3s, color 0.3s;
+  margin-top: auto;
+  text-align: center;
+}
+
+.create-group-btn:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+/* Right side (sections + content) */
+.groups-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #222020; /* full black background */
+}
+
+/* Section buttons container */
+.group-sections {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #000; /* black background */
+  border-bottom: 2px solid #333;
+}
+
+.subsection-btn {
+  padding: 8px 12px;
+  background: transparent;
+  border-radius: 50px; /* pill shape */
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #555;
+  transition: background 0.3s, color 0.3s;
+}
+
+.subsection-btn:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+/* Group content area */
+.group-content {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  color: #fff;
+}
+
+.empty-text {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.goals-container {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 20px;
+  padding: 20px;
+  color: white;
+}
+
+
+.goals-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #0a0a0a;
+  border: 2px solid #00ccff; /* neon blue border */
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.goals-left h2 {
+  margin-bottom: 10px;
+  color: #00ccff; /* neon blue heading */
+}
+
+/* ===== Unified Button Styles (Add Goal, Time, Category) ===== */
+.time-btn,
+#add-goal-btn,
+.cat-btn {
+  background: transparent;
+  border: 2px solid #00ccff;
+  color: #00ccff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.time-btn.active,
+.cat-btn.active,
+.time-btn:hover,
+.cat-btn:hover,
+#add-goal-btn:hover {
+  background: #00ccff;   /* neon blue fill */
+  color: black;          /* contrast text */
+  font-weight: bold;
+}
+
+.goals-right {
+  flex: 3;
+  background: #0a0a0a;
+  border: 2px solid #00ccff;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.goal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  border: 2px solid #00ccff; /* neon blue border */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.goal-item.completed .goal-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.goal-actions button {
+  margin-left: 5px;
+  background: transparent;
+  border: 1px solid #00ccff;
+  color: #00ccff;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.goal-actions button:hover {
+  background: #00ccff;
+  color: black;
+}
+
+/* Category buttons */
+.category-btn {
+    background: transparent;
+    color: #00f0ff; /* neon blue */
+    border: 2px solid #00f0ff;
+    border-radius: 12px;
+    padding: 6px 14px;
+    margin: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.category-btn:hover {
+    background: #00f0ff;
+    color: #000; /* black text when hovered */
+}
+
+/* Add buttons */
+#add-category-btn,
+#add-goal-btn {
+  background: #111;
+  color: #00f0ff;
+  border: 1px solid #00f0ff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-top: 10px;   /* space between */
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#add-category-btn:hover,
+#add-goal-btn:hover {
+  background: #00f0ff;
+  color: #000;
+}
+
+
+.category-btn.active,
+.category-btn:hover {
+  background-color: #00f0ff;  /* neon blue */
+  color: black;
+}
+.goals-container {
+  display: flex;
+  align-items: flex-start;   /* keep aligned at top */
+  gap: 20px;                 /* spacing between left & right */
+}
+
+.categories {
+  flex: 0 0 200px;           /* fixed width for left panel */
+}
+
+.goals-section {
+  flex: 1;                   /* take remaining space */
+}
+.panel.goals-panel {
+    display: flex;
+    flex-direction: row; /* not column */
+    gap: 20px;
+}
+
+.task-cat-btn,
+.task-add-btn {
+  background: #111;
+  color: #00ff66; /* neon green for tasks */
+  border: 1px solid #00ff66;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-top: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.task-cat-btn:hover,
+.task-add-btn:hover {
+  background: #00ff66;
+  color: black;
+}
+
+.add-task-btn {
+  background: #111;
+  color: #00ff66; /* neon green */
+  border: 1px solid #00ff66;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin: 6px 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background: #00ff66;
+  color: #000;
+}
+
+/* Add Task button - Green & pill-shaped */
+#tasks-panel #add-task-btn {
+    background-color: #28a745; /* Green */
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* pill shape */
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#tasks-panel #add-task-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.btn.cancel {
+  background: #222;
+  color: #FFD700;
+  border: 1px solid #FFD700;
+  margin-left: 12px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.btn.cancel:hover {
+  background: #FFD700;
+  color: #222;
+}
+
+
+
+#create-group-form {
+  background: rgba(18,18,24,0.98); /* Dark glassy */
+  color: #FFD700;  /* yellow accent */
+  border-radius: 18px;
+  max-width: 370px;
+  margin: 0 auto;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+  padding: 32px 24px;
+  font-family: inherit;
+}
+
+.field-row {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-row label {
+  color: #FFD700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+#group_name {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #FFD700;
+  background: #15151a;
+  color: #FFD700;
+  font-size: 1rem;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.features-list label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFD700;
+}
+
+.features-list input[type="checkbox"] {
+  accent-color: #f3ef18;
+  width: 18px;
+  height: 18px;
+}
+
+.modal-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 14px;
+  justify-content: flex-end;
+}
+
+.btn.create {
+  background: #FFD700;
+  color: #222;
+  border-radius: 7px;
+  font-weight: 600;
+  padding: 9px 28px;
+  border: none;
+}
+
+.btn.create:hover {
+  background: yellow;
+  color: #fff;
+}
+
+.btn.cancel {
+  background: transparent;
+  border: 1px solid #FFD700;
+  color: #FFD700;
+  border-radius: 7px;
+  font-weight: 600;
+  padding: 9px 28px;
+}
+
+.btn.cancel:hover {
+  background: #FFD700;
+  color: #222;
+}

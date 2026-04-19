@@ -1,0 +1,33 @@
+{% extends "accounts/base_public.html" %}
+
+{% load static %}
+
+{% block content %}
+<form id="create-group-form">
+    {% csrf_token %}
+    <div class="field-row">
+        <label for="group_name">Group Name:</label>
+        <input type="text" name="group_name" id="group_name" placeholder="Enter group name" required>
+    </div>
+
+    <div class="field-row">
+        <label>Select Features:</label>
+        <div class="features-list">
+            <label><input type="checkbox" name="features" value="chat"> Chat</label>
+            <label><input type="checkbox" name="features" value="faq"> FAQ</label>
+            <label><input type="checkbox" name="features" value="bot"> Bot</label>
+            <label><input type="checkbox" name="features" value="room"> Room</label>
+            <label><input type="checkbox" name="features" value="goals"> Goals</label>
+            <label><input type="checkbox" name="features" value="tasks"> Tasks</label>
+            <label><input type="checkbox" name="features" value="timer"> Timer</label>
+        </div>
+    </div>
+
+    <div class="modal-actions">
+        <button type="submit" class="btn create">Create</button>
+        <button type="button" class="btn cancel" onclick="closeModal()">Cancel</button>
+    </div>
+</form>
+
+
+{% endblock %}

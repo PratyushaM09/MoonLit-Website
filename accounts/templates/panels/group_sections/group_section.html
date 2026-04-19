@@ -1,0 +1,5 @@
+{% for section in sections %}
+<button class="group-section-btn" data-section="{{ section.name }}">
+    {{ section.name|title }}
+</button>
+{% endfor %}

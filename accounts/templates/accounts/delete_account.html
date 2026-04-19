@@ -1,0 +1,16 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Delete Account{% endblock %}
+
+{% block content %}
+<div class="form-container">
+  <div class="form-box">
+    <h2>⚠️ Delete Account</h2>
+    <p>Are you sure you want to permanently delete your account? This action is irreversible.</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" style="background-color: red;">Yes, Delete My Account</button>
+    </form>
+    <p><a href="{% url 'settings' %}">← Go Back to Settings</a></p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="group-features">
+  {% if sections %}
+    {% for section in sections %}
+      <div class="feature-button" data-feature="{{ section.name }}">
+        {{ section.name|title }}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No features available</p>
+  {% endif %}
+</div>

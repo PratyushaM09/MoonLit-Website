@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ group.name }} | MoonLit</title>
+  <link rel="stylesheet" href="{% static 'mygroups/css/groups.css' %}">
+  <script defer src="{% static 'mygroups/js/groups.js' %}"></script>
+</head>
+<body>
+  <div class="group-dashboard">
+    <aside class="group-sidebar">
+      <h2>{{ group.name }}</h2>
+      <ul>
+        <li>💬 Chat</li>
+        <li>🤖 Bot</li>
+        <li>📚 Resources</li>
+        <li>🧠 FAQ</li>
+        <li>🎙️ Rooms</li>
+        <li>🔗 Useful Links</li>
+        <li>➕ Add More</li>
+      </ul>
+    </aside>
+
+    <main class="group-content">
+      <h3>Welcome to {{ group.name }}!</h3>
+      <p>Select a section from the left sidebar.</p>
+    </main>
+  </div>
+</body>
+</html>
