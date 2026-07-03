@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - MoonLit</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="logo">🌙 MoonLit</div>
+    <div class="card">
+        <h2 style="margin-bottom:15px;">Create Account</h2>
+        <input type="text" id="firstName" placeholder="First Name">
+        <input type="text" id="lastName" placeholder="Last Name">
+        <input type="text" id="username" placeholder="Username">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <div class="error" id="errorMsg"></div>
+        <button class="btn" style="width:100%; margin-top:10px;" onclick="register()">Sign Up</button>
+        <p style="margin-top:15px;"><a href="login.html" class="link">Already have an account? Log in</a></p>
+    </div>
+</div>
+
+<script>
+    async function register() {
+      const errorMsg = document.getElementById('errorMsg');
+      errorMsg.textContent = '';
+
+      const body = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        username: document.getElementById('username').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+      };
+
+      try {
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          errorMsg.textContent = data.error || 'Registration failed';
+          return;
+        }
+
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data));
+        window.location.href = 'dashboard.html';
+
+      } catch (err) {
+        errorMsg.textContent = 'Something went wrong. Try again.';
+      }
+    }
+</script>
+</body>
+</html>

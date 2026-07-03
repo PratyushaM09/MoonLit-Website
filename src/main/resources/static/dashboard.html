@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - MoonLit</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="logo">🌙 MoonLit</div>
+    <h2 id="welcomeMsg">Welcome back!</h2>
+    <p class="tagline" id="userEmail"></p>
+    <button class="btn" onclick="logout()">Log Out</button>
+</div>
+
+<script>
+    const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user') || 'null');
+
+    if (!token || !user) {
+      window.location.href = 'login.html';
+    } else {
+      document.getElementById('welcomeMsg').textContent = `Welcome, ${user.firstName || user.username}!`;
+      document.getElementById('userEmail').textContent = user.email;
+    }
+
+    function logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = 'login.html';
+    }
+</script>
+</body>
+</html>
