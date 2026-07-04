@@ -1,0 +1,45 @@
+<!-- 1) Add this once inside <head>, alongside your existing <link> tags -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- 2) Add this once inside <head>, in a <style> block or your CSS file -->
+<style>
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  text-decoration: none;
+  line-height: 1;
+}
+.brand-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: #fff;
+  -webkit-text-stroke: 0.6px rgba(20, 8, 40, 0.85);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.12);
+}
+.brand-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 -1px;
+  transform: translateY(2px);
+}
+</style>
+
+<!-- 3) Anywhere you currently show the MoonLit wordmark, paste this markup -->
+<a class="brand" href="index.html" aria-label="MoonLit">
+  <span class="brand-text">M</span>
+  <svg class="brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M40 10C29 10 20 19.5 20 31.5S29 53 40 53c3.3 0 6.4-.8 9.2-2.1-6.6-1.2-14.7-7.7-14.7-19.4S42.6 13.3 49.2 12.1C46.4 10.8 43.3 10 40 10Z" stroke="#3fd4ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 27.5c1-3 3.6-4.5 6-4.5s5 1.5 6 4.5" stroke="#ff3fc8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M22 27.5h9M36 27.5h9" stroke="#ff3fc8" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="27" cy="30" r="3.6" stroke="#ff3fc8" stroke-width="2.6"/>
+    <circle cx="39" cy="30" r="3.6" stroke="#ff3fc8" stroke-width="2.6"/>
+    <path d="M25 38c2.4 2.4 8.6 2.4 11 0" stroke="#3fd4ff" stroke-width="3" stroke-linecap="round"/>
+    <path d="M52 14l1.8 4.4L58 20.2l-4.2 1.8L52 26.4l-1.8-4.4L46 20.2l4.2-1.8L52 14Z" fill="#ffd23f"/>
+  </svg>
+  <span class="brand-text">onLit</span>
+</a>
+<!-- Change href="index.html" to wherever that page should link (e.g. login.html links to itself or does nothing) -->

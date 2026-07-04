@@ -2,33 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - MoonLit</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-<div class="container">
-    <div class="logo">🌙 MoonLit</div>
-    <h2 id="welcomeMsg">Welcome back!</h2>
-    <p class="tagline" id="userEmail"></p>
-    <button class="btn" onclick="logout()">Log Out</button>
+
+<div class="bg-scrim"></div>
+
+<div class="dash">
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <button class="side-btn" data-panel="groups" title="Groups"><i data-lucide="users"></i><span class="side-label">Groups</span></button>
+            <button class="side-btn" data-panel="tasks" title="Tasks"><i data-lucide="check-square"></i><span class="side-label">Tasks</span></button>
+            <button class="side-btn" data-panel="goals" title="Goals"><i data-lucide="target"></i><span class="side-label">Goals</span></button>
+            <button class="side-btn" data-panel="timer" title="Timer"><i data-lucide="timer"></i><span class="side-label">Timer</span></button>
+        </div>
+        <div class="sidebar-bottom">
+            <button class="side-btn" data-panel="profile" title="Profile"><i data-lucide="circle-user"></i><span class="side-label">Profile</span></button>
+            <button class="side-btn" data-panel="settings" title="Settings"><i data-lucide="settings"></i><span class="side-label">Settings</span></button>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="main">
+        <header class="topbar">
+            <a class="brand" href="dashboard.html" aria-label="MoonLit">
+                <span class="brand-text">M</span>
+                <svg class="brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M40 10C29 10 20 19.5 20 31.5S29 53 40 53c3.3 0 6.4-.8 9.2-2.1-6.6-1.2-14.7-7.7-14.7-19.4S42.6 13.3 49.2 12.1C46.4 10.8 43.3 10 40 10Z" stroke="#3fd4ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M24 27.5c1-3 3.6-4.5 6-4.5s5 1.5 6 4.5" stroke="#ff3fc8" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M22 27.5h9M36 27.5h9" stroke="#ff3fc8" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="27" cy="30" r="3.6" stroke="#ff3fc8" stroke-width="2.6"/>
+                    <circle cx="39" cy="30" r="3.6" stroke="#ff3fc8" stroke-width="2.6"/>
+                    <path d="M25 38c2.4 2.4 8.6 2.4 11 0" stroke="#3fd4ff" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M52 14l1.8 4.4L58 20.2l-4.2 1.8L52 26.4l-1.8-4.4L46 20.2l4.2-1.8L52 14Z" fill="#ffd23f"/>
+                </svg>
+                <span class="brand-text">onLit</span>
+            </a>
+            <div class="topbar-right">
+                <span id="userEmail" class="user-email"></span>
+                <button class="btn-ghost" id="logoutBtn">Log Out</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1 id="welcomeMsg">Welcome back!</h1>
+            <p class="tagline">Study Made Simple — Timers, Chats, Groups</p>
+        </section>
+
+        <main class="panel-area" id="panelArea">
+            <div class="empty-state">
+                <i data-lucide="mouse-pointer-click"></i>
+                <p>Pick something from the sidebar to get started.</p>
+            </div>
+        </main>
+    </div>
+
 </div>
 
-<script>
-    const token = localStorage.getItem('token');
-    const user = JSON.parse(localStorage.getItem('user') || 'null');
-
-    if (!token || !user) {
-      window.location.href = 'login.html';
-    } else {
-      document.getElementById('welcomeMsg').textContent = `Welcome, ${user.firstName || user.username}!`;
-      document.getElementById('userEmail').textContent = user.email;
-    }
-
-    function logout() {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      window.location.href = 'login.html';
-    }
-</script>
+<script src="js/dashboard.js"></script>
 </body>
 </html>
